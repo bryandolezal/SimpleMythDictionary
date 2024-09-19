@@ -36,10 +36,10 @@ CameraInfo stringToCameraInfo(string _cameraInfo = "default")
         arrayOffset++;
     }
 
-    CameraInfo ci;
-    ci.floatValues = camFloats;
+    CameraInfo camInfo;
+    camInfo.floatValues = camFloats;
 
-    return ci;
+    return camInfo;
 }
 
 string cameraInfoToString(CameraInfo _cameraInfo)
