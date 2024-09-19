@@ -3,6 +3,7 @@ Simple dictionary for Age of Mythology Retold
 
 # Allows you to store various datatypes in a simple dictionary
 
+```
 smdAddBool("startWithWalls", false);
 smdSetBool("startWithWalls", true);
 trChatSend(1, "startWithWalls: " + smdGetBool("startWithWalls"));
@@ -37,3 +38,4 @@ smdSetUnitArray("unitsToDelete", unitArray);
 // Can't parse int[] into a string, using size() as an example
 int[] pulledUnitArray = smdGetUnitArray("unitsToDelete");
 trChatSend(1, "unitArray: " + pulledUnitArray.size());
+```
