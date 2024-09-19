@@ -1,6 +1,8 @@
 # SimpleMythDictionary
 Simple dictionary for Age of Mythology Retold
 
+Reminder that either the XS code be run, or the trigger file be imported before using any of the functions below. You will get an error if the code for the dictionary isn't ran first.
+
 # Allows you to store various datatypes in a simple dictionary
 
 ```
