@@ -149,18 +149,18 @@ class SimpleMythDictionary
     }
 };
 
-SimpleMythDictionary smd;
+SimpleMythDictionary __smd;
 
 //================================================================================================== BOOL
 
 bool smdAddBool(string key = "default", bool value = false)
 {
-    int keyIndex = smd.AddKey(key);
+    int keyIndex = __smd.AddKey(key);
 
     if(keyIndex != -1)
     {
-        smd.boolValues.add(value);
-        smd.keyValueIndices[keyIndex] = smd.boolValues.size() - 1;
+        __smd.boolValues.add(value);
+        __smd.keyValueIndices[keyIndex] = __smd.boolValues.size() - 1;
         return true;
     }
 
@@ -169,12 +169,12 @@ bool smdAddBool(string key = "default", bool value = false)
 
 bool smdSetBool(string key = "default", bool value = false)
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if(keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        smd.boolValues[valueIndex] = value;
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        __smd.boolValues[valueIndex] = value;
         return true;
     }
 
@@ -183,12 +183,12 @@ bool smdSetBool(string key = "default", bool value = false)
 
 bool smdGetBool(string key = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if (keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        return smd.boolValues[valueIndex];
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        return __smd.boolValues[valueIndex];
     }
 
     return false;
@@ -198,12 +198,12 @@ bool smdGetBool(string key = "default")
 
 bool smdAddInt(string key = "default", int value = 0)
 {
-    int keyIndex = smd.AddKey(key);
+    int keyIndex = __smd.AddKey(key);
 
     if(keyIndex != -1)
     {
-        smd.intValues.add(value);
-        smd.keyValueIndices[keyIndex] = smd.intValues.size() - 1;
+        __smd.intValues.add(value);
+        __smd.keyValueIndices[keyIndex] = __smd.intValues.size() - 1;
         return true;
     }
 
@@ -212,12 +212,12 @@ bool smdAddInt(string key = "default", int value = 0)
 
 bool smdSetInt(string key = "default", int value = 0)
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if(keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        smd.intValues[valueIndex] = value;
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        __smd.intValues[valueIndex] = value;
         return true;
     }
 
@@ -226,12 +226,12 @@ bool smdSetInt(string key = "default", int value = 0)
 
 int smdGetInt(string key = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if (keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        return smd.intValues[valueIndex];
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        return __smd.intValues[valueIndex];
     }
 
     return 0;
@@ -241,12 +241,12 @@ int smdGetInt(string key = "default")
 
 bool smdAddFloat(string key = "default", float value = 0.0)
 {
-    int keyIndex = smd.AddKey(key);
+    int keyIndex = __smd.AddKey(key);
 
     if(keyIndex != -1)
     {
-        smd.floatValues.add(value);
-        smd.keyValueIndices[keyIndex] = smd.floatValues.size() - 1;
+        __smd.floatValues.add(value);
+        __smd.keyValueIndices[keyIndex] = __smd.floatValues.size() - 1;
         return true;
     }
 
@@ -255,12 +255,12 @@ bool smdAddFloat(string key = "default", float value = 0.0)
 
 bool smdSetFloat(string key = "default", float value = 0.0)
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if(keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        smd.floatValues[valueIndex] = value;
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        __smd.floatValues[valueIndex] = value;
         return true;
     }
 
@@ -269,12 +269,12 @@ bool smdSetFloat(string key = "default", float value = 0.0)
 
 float smdGetFloat(string key = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if (keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        return smd.floatValues[valueIndex];
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        return __smd.floatValues[valueIndex];
     }
 
     return 0.0;
@@ -284,12 +284,12 @@ float smdGetFloat(string key = "default")
 
 bool smdAddString(string key = "default", string value = "default")
 {
-    int keyIndex = smd.AddKey(key);
+    int keyIndex = __smd.AddKey(key);
 
     if(keyIndex != -1)
     {
-        smd.stringValues.add(value);
-        smd.keyValueIndices[keyIndex] = smd.stringValues.size() - 1;
+        __smd.stringValues.add(value);
+        __smd.keyValueIndices[keyIndex] = __smd.stringValues.size() - 1;
         return true;
     }
 
@@ -298,12 +298,12 @@ bool smdAddString(string key = "default", string value = "default")
 
 bool smdSetString(string key = "default", string value = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if(keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        smd.stringValues[valueIndex] = value;
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        __smd.stringValues[valueIndex] = value;
         return true;
     }
 
@@ -312,12 +312,12 @@ bool smdSetString(string key = "default", string value = "default")
 
 string smdGetString(string key = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if (keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        return smd.stringValues[valueIndex];
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        return __smd.stringValues[valueIndex];
     }
 
     return "default";
@@ -327,12 +327,12 @@ string smdGetString(string key = "default")
 
 bool smdAddVector(string key = "default", vector value = cOriginVector)
 {
-    int keyIndex = smd.AddKey(key);
+    int keyIndex = __smd.AddKey(key);
 
     if(keyIndex != -1)
     {
-        smd.vectorValues.add(value);
-        smd.keyValueIndices[keyIndex] = smd.vectorValues.size() - 1;
+        __smd.vectorValues.add(value);
+        __smd.keyValueIndices[keyIndex] = __smd.vectorValues.size() - 1;
         return true;
     }
 
@@ -341,12 +341,12 @@ bool smdAddVector(string key = "default", vector value = cOriginVector)
 
 bool smdSetVector(string key = "default", vector value = cOriginVector)
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if(keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        smd.vectorValues[valueIndex] = value;
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        __smd.vectorValues[valueIndex] = value;
         return true;
     }
 
@@ -355,12 +355,12 @@ bool smdSetVector(string key = "default", vector value = cOriginVector)
 
 vector smdGetVector(string key = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if (keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        return smd.vectorValues[valueIndex];
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        return __smd.vectorValues[valueIndex];
     }
 
     return cOriginVector;
@@ -370,13 +370,13 @@ vector smdGetVector(string key = "default")
 
 bool smdAddCameraInfo(string key = "default", string value = "default")
 {
-    int keyIndex = smd.AddKey(key);
+    int keyIndex = __smd.AddKey(key);
 
     if(keyIndex != -1)
     {
         CameraInfo ci = stringToCameraInfo(value);
-        smd.cameraInfoValues.add(ci);
-        smd.keyValueIndices[keyIndex] = smd.cameraInfoValues.size() - 1;
+        __smd.cameraInfoValues.add(ci);
+        __smd.keyValueIndices[keyIndex] = __smd.cameraInfoValues.size() - 1;
         return true;
     }
 
@@ -385,13 +385,13 @@ bool smdAddCameraInfo(string key = "default", string value = "default")
 
 bool smdSetCameraInfo(string key = "default", string value = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if(keyIndex != -1)
     {
         CameraInfo ci = stringToCameraInfo(value);
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        smd.cameraInfoValues[valueIndex] = ci;
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        __smd.cameraInfoValues[valueIndex] = ci;
         return true;
     }
 
@@ -400,13 +400,13 @@ bool smdSetCameraInfo(string key = "default", string value = "default")
 
 string smdGetCameraInfo(string key = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if (keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
+        int valueIndex = __smd.keyValueIndices[keyIndex];
 
-        string cameraInfoString = cameraInfoToString(smd.cameraInfoValues[valueIndex]);
+        string cameraInfoString = cameraInfoToString(__smd.cameraInfoValues[valueIndex]);
         return cameraInfoString;
     }
 
@@ -417,13 +417,13 @@ string smdGetCameraInfo(string key = "default")
 
 bool smdAddUnitArray(string key = "default", int[] value = default)
 {
-    int keyIndex = smd.AddKey(key);
+    int keyIndex = __smd.AddKey(key);
 
     if(keyIndex != -1)
     {
         UnitArray ua = intArrayToUnitArray(value);
-        smd.unitArrayValues.add(ua);
-        smd.keyValueIndices[keyIndex] = smd.unitArrayValues.size() - 1;
+        __smd.unitArrayValues.add(ua);
+        __smd.keyValueIndices[keyIndex] = __smd.unitArrayValues.size() - 1;
         return true;
     }
 
@@ -432,15 +432,15 @@ bool smdAddUnitArray(string key = "default", int[] value = default)
 
 bool smdSetUnitArray(string key = "default", int[] value = default)
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
 
 
     if(keyIndex != -1)
     {
         UnitArray ua = intArrayToUnitArray(value);
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        smd.unitArrayValues[valueIndex] = ua;
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        __smd.unitArrayValues[valueIndex] = ua;
         return true;
     }
 
@@ -449,12 +449,12 @@ bool smdSetUnitArray(string key = "default", int[] value = default)
 
 int[] smdGetUnitArray(string key = "default")
 {
-    int keyIndex = smd.FindKey(key);
+    int keyIndex = __smd.FindKey(key);
 
     if (keyIndex != -1)
     {
-        int valueIndex = smd.keyValueIndices[keyIndex];
-        int[] unitArray = unitArrayToIntArray(smd.unitArrayValues[valueIndex]);
+        int valueIndex = __smd.keyValueIndices[keyIndex];
+        int[] unitArray = unitArrayToIntArray(__smd.unitArrayValues[valueIndex]);
         return unitArray;
     }
 
@@ -468,7 +468,7 @@ highFrequency
 runImmediately
 active
 {
-    smd.Initalize();
+    __smd.Initalize();
 
     xsDisableRule("_Initalize_Simple_Myth_Dictionary");
     trDisableRule("Initalize_Simple_Myth_Dictionary");
