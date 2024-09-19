@@ -1,0 +1,22 @@
+    <effect name="SMD: Add Unit Array">
+      <param name="KeyName" dispname="Key Name" vartype="string">unitArray</param>
+      <param name="SrcObject" dispname="Units" vartype="unit">-1</param>
+      <command>int[] unitIDs = new int(0, 0);</command>
+      <command loop="" loopparm="SrcObject">unitIDs.add(%SrcObject%);</command>
+      <command>smdAddUnitArray("%KeyName%", unitIDs);</command>
+    </effect>
+    <effect name="SMD: Add Camera Cut Info">
+      <param name="KeyName" dispname="Key Name" vartype="string">cameraInfo</param>
+      <param name="CameraInfo" dispname="Camera Info" vartype="camerainfo"></param>
+      <command>smdAddCameraInfo("%KeyName%", "%CameraInfo%");</command>
+    </effect>
+    <effect name="SMD: Add Vector (Unit)">
+      <param name="KeyName" dispname="Key Name" vartype="string">vectorUnit</param>
+      <param name="SrcObject" dispname="Units" vartype="unit">-1</param>
+      <command>smdAddVector("%KeyName%", trUnitGetPosition(%SrcObject%));</command>
+    </effect>
+    <effect name="SMD: Add Vector (Position)">
+      <param name="KeyName" dispname="Key Name" vartype="string">vectorPosition</param>
+      <param name="Position" dispname="" vartype="area" dispradius="">0, 0, 0</param>
+      <command>smdAddVector("%KeyName%", vector(%Position%));</command>
+    </effect>
